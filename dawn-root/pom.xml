@@ -1,9 +1,227 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>de-slag-dawn-root</groupId>
-  <artifactId>dawn-root</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <name>dawn-root</name>
-  <description>dawn-root</description>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de-slag-dawn-root</groupId>
+	<artifactId>dawn-root</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>dawn-root</name>
+	<description>dawn-root</description>
+	<properties>
+		<apache.commons.version>3.7</apache.commons.version>
+		<apache.commons.logging.version>1.1.1</apache.commons.logging.version>
+		<eclipse.link.version>2.6.5</eclipse.link.version>
+		<spring.version>5.0.3.RELEASE</spring.version>
+		<mysql.version>6.0.6</mysql.version>
+		<mariadb.driver.version>2.2.6</mariadb.driver.version>
+		<log4j.version>2.11.1</log4j.version>
+		<sun.jsf.version>2.2.16</sun.jsf.version>
+		<javax.servlet.jstl.version>1.2</javax.servlet.jstl.version>
+		<javax.servlet.servlet.api.version>2.5</javax.servlet.servlet.api.version>
+		<javax.servlet.javax.servlet.api.version>3.1.0</javax.servlet.javax.servlet.api.version>
+		<hibernate.core.version>5.3.3.Final</hibernate.core.version>
+		<hibernate.annotations.version>3.5.6-Final</hibernate.annotations.version>
+		<hibernate.tools.version>5.3.3.Final</hibernate.tools.version>
+		<spring.context.version>5.0.8.RELEASE</spring.context.version>
+		<apache.odftoolkit.version>0.8.2-incubating</apache.odftoolkit.version>
+		<apache.commons.csv.version>1.5</apache.commons.csv.version>
+		<com.sun.tools.version>1.7.0.13</com.sun.tools.version>
+		<org.javamoney.version>0.9</org.javamoney.version>
+		<slf4j.version>1.7.25</slf4j.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+
+			<dependency>
+				<groupId>com.sun.xml.bind</groupId>
+				<artifactId>jaxb-impl</artifactId>
+				<version>2.3.1</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>javax.annotation-api</artifactId>
+				<version>1.3.2</version>
+			</dependency>
+			
+
+			<dependency>
+				<groupId>org.javamoney</groupId>
+				<artifactId>moneta</artifactId>
+				<version>${org.javamoney.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun</groupId>
+				<artifactId>tools</artifactId>
+				<version>${com.sun.tools.version}</version>
+				<!-- <scope>system</scope> <systemPath>/home/sivas/dev/3rd-party-artefacts/tools-1.7.0.13.jar</systemPath> -->
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.jsoup</groupId>
+				<artifactId>jsoup</artifactId>
+				<version>1.11.3</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-csv</artifactId>
+				<version>${apache.commons.csv.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.odftoolkit</groupId>
+				<artifactId>simple-odf</artifactId>
+				<version>${apache.odftoolkit.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>tools</artifactId>
+						<groupId>com.sun</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.context.version}</version>
+			</dependency>
+
+			<!-- logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-api</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${apache.commons.logging.version}</version>
+			</dependency>
+
+			<!-- ioc -->
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<!-- db driver -->
+
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mariadb.jdbc</groupId>
+				<artifactId>mariadb-java-client</artifactId>
+				<version>${mariadb.driver.version}</version>
+			</dependency>
+
+			<!-- persistence -->
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-tools</artifactId>
+				<version>${hibernate.tools.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-core</artifactId>
+				<version>${hibernate.core.version}</version>
+			</dependency>
+
+			<!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-annotations</artifactId> 
+				<version>${hibernate.annotations.version}</version> </dependency> -->
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.eclipse.persistence</groupId>
+				<artifactId>eclipselink</artifactId>
+				<version>${eclipse.link.version}</version>
+				<scope>compile</scope>
+			</dependency>
+
+			<!-- jsf -->
+
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-api</artifactId>
+				<version>${sun.jsf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-impl</artifactId>
+				<version>${sun.jsf.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>${javax.servlet.jstl.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${javax.servlet.servlet.api.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${javax.servlet.javax.servlet.api.version}</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+			<!-- tools -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${apache.commons.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-cli</groupId>
+				<artifactId>commons-cli</artifactId>
+				<version>1.4</version>
+			</dependency>
+
+			<!-- gui -->
+
+			<dependency>
+				<groupId>org.primefaces</groupId>
+				<artifactId>primefaces</artifactId>
+				<version>6.0</version>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
+
+
 </project>
