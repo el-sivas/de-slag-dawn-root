@@ -8,6 +8,9 @@
 	<packaging>pom</packaging>
 	<name>dawn-root</name>
 	<description>dawn-root</description>
+	<modules>
+		<module>dawn-root-base</module>
+	</modules>
 	<properties>
 		<apache.commons.version>3.7</apache.commons.version>
 		<apache.commons.logging.version>1.1.1</apache.commons.logging.version>
@@ -33,6 +36,11 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>de-slag-dawn-root</groupId>
+				 <artifactId>dawn-root-base</artifactId>
+				<version>1.0.2-SNAPSHOT</version>
+			</dependency>
 
 			<dependency>
 				<groupId>com.sun.xml.bind</groupId>
@@ -44,7 +52,7 @@
 				<artifactId>javax.annotation-api</artifactId>
 				<version>1.3.2</version>
 			</dependency>
-			
+
 
 			<dependency>
 				<groupId>org.javamoney</groupId>
@@ -222,6 +230,7 @@
 
 		</dependencies>
 	</dependencyManagement>
+
 
 
 </project>
