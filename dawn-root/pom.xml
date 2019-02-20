@@ -16,6 +16,7 @@
 		<apache.commons.logging.version>1.1.1</apache.commons.logging.version>
 		<eclipse.link.version>2.6.5</eclipse.link.version>
 		<spring.version>5.0.3.RELEASE</spring.version>
+		<spring.context.version>5.0.8.RELEASE</spring.context.version>
 		<mysql.version>6.0.6</mysql.version>
 		<mariadb.driver.version>2.2.6</mariadb.driver.version>
 		<log4j.version>2.11.1</log4j.version>
@@ -26,11 +27,11 @@
 		<hibernate.core.version>5.3.3.Final</hibernate.core.version>
 		<hibernate.annotations.version>3.5.6-Final</hibernate.annotations.version>
 		<hibernate.tools.version>5.3.3.Final</hibernate.tools.version>
-		<spring.context.version>5.0.8.RELEASE</spring.context.version>
+		
 		<apache.odftoolkit.version>0.8.2-incubating</apache.odftoolkit.version>
 		<apache.commons.csv.version>1.5</apache.commons.csv.version>
 		<com.sun.tools.version>1.7.0.13</com.sun.tools.version>
-		<org.javamoney.version>0.9</org.javamoney.version>
+		<org.javamoney.version>1.1</org.javamoney.version>
 		<slf4j.version>1.7.25</slf4j.version>
 	</properties>
 
@@ -97,6 +98,12 @@
 				<artifactId>spring-context</artifactId>
 				<version>${spring.context.version}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
 
 			<!-- logging -->
 			<dependency>
@@ -123,11 +130,7 @@
 
 			<!-- ioc -->
 
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
+
 
 			<!-- db driver -->
 
