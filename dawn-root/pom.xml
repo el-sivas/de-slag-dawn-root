@@ -15,7 +15,6 @@
 		<apache.commons.version>3.7</apache.commons.version>
 		<apache.commons.logging.version>1.1.1</apache.commons.logging.version>
 		<eclipse.link.version>2.6.5</eclipse.link.version>
-		<spring.version>5.0.3.RELEASE</spring.version>
 		<spring.context.version>5.0.8.RELEASE</spring.context.version>
 		<mysql.version>6.0.6</mysql.version>
 		<mariadb.driver.version>2.2.6</mariadb.driver.version>
@@ -27,19 +26,22 @@
 		<hibernate.core.version>5.3.3.Final</hibernate.core.version>
 		<hibernate.annotations.version>3.5.6-Final</hibernate.annotations.version>
 		<hibernate.tools.version>5.3.3.Final</hibernate.tools.version>
-		
+
 		<apache.odftoolkit.version>0.8.2-incubating</apache.odftoolkit.version>
 		<apache.commons.csv.version>1.5</apache.commons.csv.version>
 		<com.sun.tools.version>1.7.0.13</com.sun.tools.version>
 		<org.javamoney.version>1.1</org.javamoney.version>
 		<slf4j.version>1.7.25</slf4j.version>
+		<org.jsoup-jsoup.version>1.11.3</org.jsoup-jsoup.version>
+		<org.primefaces-primefaces.version>6.0</org.primefaces-primefaces.version>
+		<commons-cli.version>1.4</commons-cli.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>de-slag-dawn-root</groupId>
-				 <artifactId>dawn-root-base</artifactId>
+				<artifactId>dawn-root-base</artifactId>
 				<version>1.0.2-SNAPSHOT</version>
 			</dependency>
 
@@ -64,14 +66,15 @@
 				<groupId>com.sun</groupId>
 				<artifactId>tools</artifactId>
 				<version>${com.sun.tools.version}</version>
-				<!-- <scope>system</scope> <systemPath>/home/sivas/dev/3rd-party-artefacts/tools-1.7.0.13.jar</systemPath> -->
 			</dependency>
 
 
 			<dependency>
 				<groupId>org.jsoup</groupId>
 				<artifactId>jsoup</artifactId>
-				<version>1.11.3</version>
+				<version>${org.jsoup-jsoup.version}</version>
+
+
 			</dependency>
 
 			<dependency>
@@ -97,12 +100,6 @@
 				<groupId>org.springframework</groupId>
 				<artifactId>spring-context</artifactId>
 				<version>${spring.context.version}</version>
-			</dependency>
-			
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-context</artifactId>
-				<version>${spring.version}</version>
 			</dependency>
 
 			<!-- logging -->
@@ -220,7 +217,8 @@
 			<dependency>
 				<groupId>commons-cli</groupId>
 				<artifactId>commons-cli</artifactId>
-				<version>1.4</version>
+				<version>${commons-cli.version}</version>
+
 			</dependency>
 
 			<!-- gui -->
@@ -228,7 +226,7 @@
 			<dependency>
 				<groupId>org.primefaces</groupId>
 				<artifactId>primefaces</artifactId>
-				<version>6.0</version>
+				<version>${org.primefaces-primefaces.version}</version>
 			</dependency>
 
 		</dependencies>
